@@ -1,3 +1,6 @@
+# Development folders
+.vscode
+
 # Object files
 *.o
 
@@ -16,5 +19,5 @@
 *.exe
 *.out
 
-# docs
+# Docs
 *.pdf
