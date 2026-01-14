@@ -21,3 +21,6 @@
 
 # Docs
 *.pdf
+
+# Test Files
+test_*
