@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 16:08:03 by vmistry           #+#    #+#             */
-/*   Updated: 2025/10/27 17:18:11 by vmistry          ###   ########.fr       */
+/*   Created: 2025/11/04 16:03:52 by vmistry           #+#    #+#             */
+/*   Updated: 2025/11/10 18:24:42 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	len;
+	unsigned int	num;
+	char			ch;
 
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		num = (unsigned int)(-n);
+	}
+	else
+		num = (unsigned int)(n);
+	if (num >= 10)
+		ft_putnbr_fd((num / 10), fd);
+	ch = (num % 10) + '0';
+	ft_putchar_fd(ch, fd);
 }
-
 /*
-#include <stdio.h>
 int	main(void)
 {
-	char	str[] = "1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4";
-
-	printf("String: %s\nSize: %d\n", str, ft_strlen(str));
+	ft_putnbr_fd(0, 1);
 	return (0);
-}
-*/
+}*/

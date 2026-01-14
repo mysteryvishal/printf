@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 16:08:03 by vmistry           #+#    #+#             */
-/*   Updated: 2025/10/27 17:18:11 by vmistry          ###   ########.fr       */
+/*   Created: 2025/11/12 01:39:59 by vmistry           #+#    #+#             */
+/*   Updated: 2025/11/12 12:24:55 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// lstdelone:
+// 	Takes a node as parameter and frees its content using the 'del' function
+// 	- Free the node itself but does NOT free the next node.
+// 	- Doesn't adjust linked list pointers.
+
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	size_t	len;
-
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }
-
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char	str[] = "1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4";
-
-	printf("String: %s\nSize: %d\n", str, ft_strlen(str));
-	return (0);
-}
-*/

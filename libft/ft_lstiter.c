@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 16:08:03 by vmistry           #+#    #+#             */
-/*   Updated: 2025/10/27 17:18:11 by vmistry          ###   ########.fr       */
+/*   Created: 2025/11/12 02:33:53 by vmistry           #+#    #+#             */
+/*   Updated: 2025/11/12 02:37:43 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// lstiter:
+// 	Iterates through the list ’lst’ and applies the 
+// 	function ’f’ to the content of each node.
+
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t	len;
+	t_list	*cursor;
 
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
+	cursor = lst;
+	while (cursor != NULL)
+	{
+		f(cursor->content);
+		cursor = cursor->next;
+	}
 }
-
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char	str[] = "1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4";
-
-	printf("String: %s\nSize: %d\n", str, ft_strlen(str));
-	return (0);
-}
-*/
