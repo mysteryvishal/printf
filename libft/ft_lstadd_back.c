@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 16:08:03 by vmistry           #+#    #+#             */
-/*   Updated: 2025/10/27 17:18:11 by vmistry          ###   ########.fr       */
+/*   Created: 2025/11/12 01:16:29 by vmistry           #+#    #+#             */
+/*   Updated: 2025/11/12 08:24:10 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// lsdtadd_back:
+// 	Adds the node ’new’ at the end of the list.
+
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	len;
+	t_list	*last;
 
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
+	last = ft_lstlast(*lst);
+	if (!last)
+		*lst = new;
+	else
+		last->next = new;
 }
-
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char	str[] = "1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4";
-
-	printf("String: %s\nSize: %d\n", str, ft_strlen(str));
-	return (0);
-}
-*/

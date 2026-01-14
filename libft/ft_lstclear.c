@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 16:08:03 by vmistry           #+#    #+#             */
-/*   Updated: 2025/10/27 17:18:11 by vmistry          ###   ########.fr       */
+/*   Created: 2025/11/12 02:02:28 by vmistry           #+#    #+#             */
+/*   Updated: 2025/11/12 12:29:51 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// lstclear:
+// 	Deletes and frees the given node and all its successors, 
+// 	using the function ’del’ and free(3). 
+// 	Finally, set the pointer to the list to NULL.
+
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	size_t	len;
+	t_list	*next;
 
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
+	if (!lst || !*lst || !del)
+		return ;
+	while (*lst)
+	{
+		next = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = next;
+	}
+	free(*lst);
+	*lst = NULL;
 }
-
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char	str[] = "1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4";
-
-	printf("String: %s\nSize: %d\n", str, ft_strlen(str));
-	return (0);
-}
-*/

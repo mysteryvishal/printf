@@ -1,0 +1,13 @@
+# Settings folders
+.vscode
+
+# PDF files
+*.pdf
+*.md
+!README.md
+
+# Compiled object files
+*.o
+*.out
+*.pch
+*.a

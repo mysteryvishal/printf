@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 16:08:03 by vmistry           #+#    #+#             */
-/*   Updated: 2025/10/27 17:18:11 by vmistry          ###   ########.fr       */
+/*   Created: 2025/11/12 00:57:45 by vmistry           #+#    #+#             */
+/*   Updated: 2025/11/12 03:00:42 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// lstlast:
+// 	Returns the last node of the list.
+
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	len;
+	t_list	*cursor;
 
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
+	if (!lst)
+		return (NULL);
+	cursor = lst;
+	while (cursor->next != NULL)
+		cursor = cursor->next;
+	return (cursor);
 }
-
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char	str[] = "1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4";
-
-	printf("String: %s\nSize: %d\n", str, ft_strlen(str));
-	return (0);
-}
-*/
