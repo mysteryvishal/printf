@@ -6,7 +6,7 @@
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 13:07:04 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/16 16:51:37 by vmistry          ###   ########.fr       */
+/*   Updated: 2026/01/16 17:09:38 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	handle_type(const char type, va_list args, size_t *count)
 {
 	if (type == 'd' || type == 'i')
-		pf_putnbr(va_arg(args, int), 1);
+		pf_putnbr(va_arg(args, int), count);
 	else if (type == 'c' || type == '%')
 		pf_putchar(va_arg(args, char), count);
 	else if (type == 's')
