@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/30 05:06:22 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/16 16:05:25 by vmistry          ###   ########.fr       */
+/*   Created: 2026/01/16 15:54:50 by vmistry           #+#    #+#             */
+/*   Updated: 2026/01/16 16:05:12 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-# define HEX "0123456789abcdef"
+#include "printf.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include "./libft/libft.h"
-
-int	ft_printf(const char *, ...);
-void	pf_puthex(unsigned int nbr, int *count);
-void	pf_putstr(char *s, int *count);
-#endif
+void	pf_putstr(char *s, int *count)
+{
+	if (!s)
+		return ;
+	while (*s)
+	{
+		write(1, s, 1);
+		*count += 1;
+		s++;
+	}
+}
