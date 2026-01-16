@@ -6,7 +6,7 @@
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 05:06:22 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/16 16:45:40 by vmistry          ###   ########.fr       */
+/*   Updated: 2026/01/16 16:49:59 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ void	pf_puthex(unsigned int nbr, int *count);
 void	pf_putstr(char *s, int *count);
 void	pf_putchar(char c, int *count);
 void	pf_putnbr(int n, int *count);
+void	pf_putunbr(unsigned int n, int *count);
 #endif
