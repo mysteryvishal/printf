@@ -6,9 +6,11 @@
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 16:27:21 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/16 16:29:28 by vmistry          ###   ########.fr       */
+/*   Updated: 2026/01/16 16:36:00 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 void	pf_putnbr(int n, int *count)
 {

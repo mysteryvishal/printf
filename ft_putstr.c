@@ -6,11 +6,11 @@
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 15:54:50 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/16 16:05:12 by vmistry          ###   ########.fr       */
+/*   Updated: 2026/01/16 16:43:47 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 void	pf_putstr(char *s, int *count)
 {
