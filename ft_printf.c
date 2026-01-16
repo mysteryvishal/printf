@@ -6,7 +6,7 @@
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 13:07:04 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/16 17:48:26 by vmistry          ###   ########.fr       */
+/*   Updated: 2026/01/16 20:29:46 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ static int	handle_type(const char type, va_list args, int *count)
 	else if (type == 'u')
 		pf_putunbr(va_arg(args, unsigned int), count);
 	else if (type == 'x' || type == 'X')
-		pf_puthex(va_arg(args, unsigned int), count);
+		pf_puthex(va_arg(args, unsigned long long), count);
 	else if (type == 'p')
-		pf_puthex(va_arg(args, unsigned int), count);
+		pf_putptr(args, count);
+		// pf_putptr((unsigned long long) va_arg(args, void *), count);
 	else
 		return (1);
 	return (0);
