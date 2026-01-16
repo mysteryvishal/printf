@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/30 05:06:22 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/16 16:29:11 by vmistry          ###   ########.fr       */
+/*   Created: 2026/01/16 16:27:21 by vmistry           #+#    #+#             */
+/*   Updated: 2026/01/16 16:29:28 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-# define HEX "0123456789abcdef"
+void	pf_putnbr(int n, int *count)
+{
+	unsigned int	num;
+	char			ch;
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include "./libft/libft.h"
-
-int	ft_printf(const char *, ...);
-void	pf_puthex(unsigned int nbr, int *count);
-void	pf_putstr(char *s, int *count);
-void	pf_putchar(char c, int *count);
-void	pf_putnbr(int n, int *count);
-#endif
+	if (n == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		pf_putchar('-', count);
+		num = (unsigned int)(-n);
+	}
+	else
+		num = (unsigned int)(n);
+	if (num >= 10)
+		pf_putnbr((num / 10), count);
+	ch = (num % 10) + '0';
+	pf_putchar(ch, count);
+}
