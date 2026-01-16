@@ -29,7 +29,7 @@ static int	handle_type(const char type, va_list args)
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
-	size_t	count;
+	int	count;
 
 	va_start(args, format);
 	while(*format)
@@ -37,7 +37,7 @@ int	ft_printf(const char *format, ...)
 		if(*format == '%')
 		{
 			format++;
-			if (handle_type(*format, args))
+			if (handle_type(*format, args, &count))
 				return (1);
 		}
 		ft_putchar_fd(*format, 1);
