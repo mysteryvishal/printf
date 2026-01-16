@@ -6,7 +6,7 @@
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 13:21:13 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/16 15:51:07 by vmistry          ###   ########.fr       */
+/*   Updated: 2026/01/16 17:02:11 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	pf_puthex(unsigned int nbr, int *count)
 	}
 	else
 	{
-		ft_putchar_fd(HEX[nbr], 1);
-		*count += 1;
+		pf_putchar(HEX[nbr], count);
 	}
 }
