@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/30 05:06:22 by vmistry           #+#    #+#             */
-/*   Updated: 2025/11/30 05:17:34 by vmistry          ###   ########.fr       */
+/*   Created: 2025/10/22 16:06:12 by vmistry           #+#    #+#             */
+/*   Updated: 2025/11/06 22:31:19 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-# include <stdlib.h>
-# include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar(char c);
-void	ft_putstr(char *s);
-void	ft_putnbr(int n);
-
-#endif
+int	ft_isdigit(int arg)
+{
+	if (arg >= '0' && arg <= '9')
+		return (1);
+	return (0);
+}
