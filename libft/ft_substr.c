@@ -6,7 +6,7 @@
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:26:54 by vmistry           #+#    #+#             */
-/*   Updated: 2025/12/01 11:29:26 by vmistry          ###   ########.fr       */
+/*   Updated: 2026/01/16 16:44:25 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
 	size_t	i;
-	
+
 	if (!s)
 		return (NULL);
 	if (start > ft_strlen(s))
