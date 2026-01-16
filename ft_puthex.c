@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/30 05:06:22 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/16 15:52:44 by vmistry          ###   ########.fr       */
+/*   Created: 2026/01/16 13:21:13 by vmistry           #+#    #+#             */
+/*   Updated: 2026/01/16 15:51:07 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-# define HEX "0123456789abcdef"
+#include "ft_printf.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include "./libft/libft.h"
-
-int	ft_printf(const char *, ...);
-void	pf_puthex(unsigned int nbr, int *count);
-#endif
+void	pf_puthex(unsigned int nbr, int *count)
+{
+	if (nbr >= 16)
+	{
+		pf_puthex(nbr / 16, count);
+		pf_puthex(nbr % 16, count);
+	}
+	else
+	{
+		ft_putchar_fd(HEX[nbr], 1);
+		*count += 1;
+	}
+}
