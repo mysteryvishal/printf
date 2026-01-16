@@ -45,8 +45,8 @@ int	ft_printf(const char *format, ...)
 			if (handle_type(*format, args, &count))
 				return (1);
 		}
-		ft_putchar_fd(*format, 1);
-		count++;
+		pf_putchar(*format, &count);
+		format++;
 	}
 	va_end(args);
 	return (count);
