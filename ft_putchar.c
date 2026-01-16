@@ -6,13 +6,13 @@
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 15:54:50 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/16 16:41:45 by vmistry          ###   ########.fr       */
+/*   Updated: 2026/01/16 17:00:59 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	pf_putchar(char c, int *count)
+void	pf_putchar(int c, int *count)
 {
 	write(1, &c, 1);
 	*count += 1;

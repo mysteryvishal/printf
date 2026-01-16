@@ -17,7 +17,7 @@ static int	handle_type(const char type, va_list args, int *count)
 	if (type == 'd' || type == 'i')
 		pf_putnbr(va_arg(args, int), count);
 	else if (type == 'c' || type == '%')
-		pf_putchar(va_arg(args, char), count);
+		pf_putchar(va_arg(args, int), count);
 	else if (type == 's')
 		pf_putstr(va_arg(args, char *), count);
 	else if (type == 'u')
