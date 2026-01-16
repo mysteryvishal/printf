@@ -6,7 +6,7 @@
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 13:07:04 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/16 17:09:38 by vmistry          ###   ########.fr       */
+/*   Updated: 2026/01/16 17:48:26 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	ft_printf(const char *format, ...)
 			if (handle_type(*format, args, &count))
 				return (1);
 		}
+		else
 		pf_putchar(*format, &count);
 		format++;
 	}
