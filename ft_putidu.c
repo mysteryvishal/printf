@@ -6,7 +6,7 @@
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 12:58:15 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/17 13:11:10 by vmistry          ###   ########.fr       */
+/*   Updated: 2026/01/17 13:37:35 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,5 @@ void	pf_putid(int n, int *count)
 	}
 	else
 		num = (unsigned int)(n);
-	
 	pf_putu(num, count);
 }
