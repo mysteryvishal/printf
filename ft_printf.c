@@ -6,7 +6,7 @@
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 13:07:04 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/17 13:37:58 by vmistry          ###   ########.fr       */
+/*   Updated: 2026/01/17 15:13:48 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ static int	handle_type(const char type, va_list args, int *count)
 		pf_putid(va_arg(args, int), count);
 	else if (type == 'c')
 		pf_putc(va_arg(args, int), count);
-	else if (type == '%')
-		pf_putc('%', count);
 	else if (type == 's')
 		pf_puts(va_arg(args, char *), count);
 	else if (type == 'u')
@@ -29,7 +27,7 @@ static int	handle_type(const char type, va_list args, int *count)
 	else if (type == 'p')
 		pf_putp(va_arg(args, unsigned long long), count);
 	else
-		return (1);
+		pf_putc('%', count);
 	return (0);
 }
 
