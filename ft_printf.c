@@ -6,7 +6,7 @@
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 13:07:04 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/17 13:28:46 by vmistry          ###   ########.fr       */
+/*   Updated: 2026/01/17 13:37:58 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ static int	handle_type(const char type, va_list args, int *count)
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
-	int	count;
+	int		count;
 
 	count = 0;
 	if (format == NULL)
 		return (0);
 	va_start(args, format);
-	while(*format)
+	while (*format)
 	{
-		if(*format == '%')
+		if (*format == '%')
 		{
 			format++;
 			if (handle_type(*format, args, &count))
