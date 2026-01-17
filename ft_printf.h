@@ -24,6 +24,6 @@ void	pf_puts(char *s, int *count);
 void	pf_putc(int c, int *count);
 void	pf_putid(int n, int *count);
 void	pf_putu(unsigned int n, int *count);
-void	pf_puth(unsigned long long nbr, int *count, int upper);
+void	pf_puth(unsigned long num, int *count, int upper);
 void	pf_putp(unsigned long long p, int *count);
 #endif
