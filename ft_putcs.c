@@ -6,7 +6,7 @@
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 12:59:26 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/17 13:29:24 by vmistry          ###   ########.fr       */
+/*   Updated: 2026/01/17 13:42:51 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	pf_puts(char *s, int *count)
 		return ;
 	while (*s)
 	{
-		pf_putc(s, count);
+		pf_putc(*s, count);
 		s++;
 	}
 }
