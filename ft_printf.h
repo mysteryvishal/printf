@@ -6,7 +6,7 @@
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 05:06:22 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/16 18:20:21 by vmistry          ###   ########.fr       */
+/*   Updated: 2026/01/17 13:20:45 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@
 # include "./libft/libft.h"
 
 int		ft_printf(const char *format, ...);
-void	pf_putstr(char *s, int *count);
-void	pf_putchar(int c, int *count);
-void	pf_putnbr(int n, int *count);
-void	pf_putunbr(unsigned int n, int *count);
-void	pf_puthex(unsigned long long nbr, int *count);
-void	pf_putptr(unsigned long long p, int *count);
+void	pf_puts(char *s, int *count);
+void	pf_putc(int c, int *count);
+void	pf_putid(int n, int *count);
+void	pf_putu(unsigned int n, int *count);
+void	pf_puth(unsigned long long nbr, int *count, int upper);
+void	pf_putp(unsigned long long p, int *count);
 #endif

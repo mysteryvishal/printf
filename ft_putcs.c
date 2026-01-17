@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putcs.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/16 16:27:21 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/16 16:36:00 by vmistry          ###   ########.fr       */
+/*   Created: 2026/01/17 12:59:26 by vmistry           #+#    #+#             */
+/*   Updated: 2026/01/17 13:03:36 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	pf_putnbr(int n, int *count)
+void	pf_putc(int c, int *count)
 {
-	unsigned int	num;
-	char			ch;
+	write(1, &c, 1);
+	*count += 1;
+}
 
-	if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
+void	pf_puts(char *s, int *count)
+{
+	if (!s)
 		return ;
-	}
-	if (n < 0)
+	while (*s)
 	{
-		pf_putchar('-', count);
-		num = (unsigned int)(-n);
+		pf_putchar(s, count);
+		s++;
 	}
-	else
-		num = (unsigned int)(n);
-	if (num >= 10)
-		pf_putnbr((num / 10), count);
-	ch = (num % 10) + '0';
-	pf_putchar(ch, count);
 }
