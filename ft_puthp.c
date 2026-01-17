@@ -6,7 +6,7 @@
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 13:21:13 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/17 13:20:26 by vmistry          ###   ########.fr       */
+/*   Updated: 2026/01/17 15:06:09 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	pf_puth(unsigned long long nbr, int *count, int upper)
 void	pf_putp(unsigned long long p, int *count)
 {
 	if (!p)
-		pf_puts("(nil)", count);
+		return (pf_puts("(nil)", count));
 	pf_puts("0x", count);
 	pf_puth(p, count, 0);
 }
