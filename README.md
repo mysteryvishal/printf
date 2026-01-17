@@ -34,11 +34,11 @@ Once a format specifier (like `c`, `s`, or `d`) is identified, a dispatch/handle
 
 - **Chosen Approach: `if-else if` Chain**: I chose a simple `if-else if` control structure to match the specifier character to its corresponding handler function (e.g., `if (type == 'd') pf_putid(...)`).
 
-- **Justification**: This approach is highly readable, easy to debug, and sufficient for the required number of specifiers. It clearly maps each character to a specific action without unnecessary complexity. I briefly considered a jump table (an array of function pointers) for performance benefits with a very large number of specifiers, however this method would require all functions to have the same signature and would require significant refactoring. In short, `if-else if` structure provided the best balance of simplicity and performance for this project's scope.
+- **Justification**: This approach is highly readable, easy to debug, and sufficient for the required number of specifiers. It clearly maps each character to a specific action without unnecessary complexity. I briefly considered a jump table (an array of function pointers) for performance benefits with a very large number of specifiers. This method would require all functions to have the same signature and would require significant refactoring. In short, `if-else if` structure provided the best balance of simplicity and performance for this project's scope.
 
 ### 3. Number Conversion
 
-- **Algorithm: Recursive Division/Modulo**: For numeric conversions (`d`, `i`, `u`, `x`, `X`), a recursive approach is used. The function repeatedly calls itself with the number divided by its base (10 for decimal, 16 for hexadecimal) until the number is less than the base. On the way back up the call stack, the character corresponding to the `number % base` is printed. This is an elegantly simple method to print the digits in the correct order without needing an intermediate buffer to store the string representation.
+- **Algorithm: Recursive Division/Modulo**: For numeric conversions (`d`, `i`, `u`, `x`, `X`), a recursive approach is used. The function repeatedly calls itself with the number divided by its base (10 for decimal, 16 for hexadecimal) until the number is less than the base. On the way back up the call stack, the character corresponding to the `number % base` is printed. This simple method prints the digits in the correct order without needing an intermediate buffer to store the string representation.
 
 ## Instructions
 
@@ -83,8 +83,11 @@ This project was completed by referencing standard C documentation and tutorials
 
 - **`printf` (3)** - [Linux man page](https://man7.org/linux/man-pages/man3/printf.3.html)
 - **`stdarg.h`** - [Cplusplus.com reference](https://cplusplus.com/reference/cstdarg/)
+- **The printf function** – [UC3M page](https://www.it.uc3m.es/pbasanta/asng/course_notes/input_output_printf_en.html)
+- **printf in C** – [Geeks for Geeks page](https://www.geeksforgeeks.org/c/printf-in-c/)
+- **What is Va_list in C?** – [Hackernoon article](https://hackernoon.com/what-is-va_list-in-c-exploring-the-secrets-of-ft_printf)
 
-AI, specifically GitHub Copilot, was used as a programming assistant for the following tasks:
+AI, specifically GitHub Copilot, was used as an assistant for the following tasks:
 
 - **Debugging:** Helping identify learning points, explain concepts simply, and understand error messages.
 - **Makefile Assistance:** Identifying logical errors in the `Makefile` to ensure proper dependency handling.
