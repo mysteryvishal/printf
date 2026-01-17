@@ -6,7 +6,7 @@
 #    By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/30 04:58:01 by vmistry           #+#    #+#              #
-#    Updated: 2026/01/17 17:52:58 by vmistry          ###   ########.fr        #
+#    Updated: 2026/01/17 19:17:33 by vmistry          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,13 +26,11 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
-	$(AR) $@ $^
+	cp $(LIBFT) $(NAME)
+	$(AR) $@ $(OBJS)
 
-%.o : %.c
-	$(CC) $(CFLAGS) -I. -I$(LIBFT_DIR) -c $< -o $@
-
-$(LIBFT):
-	make -C $(LIBFT_DIR)
+$(LIBFT): $(LIBFT_DIR)
+	make all -C $<
 
 clean:
 	make clean -C $(LIBFT_DIR)
