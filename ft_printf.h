@@ -6,7 +6,7 @@
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 05:06:22 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/17 13:20:45 by vmistry          ###   ########.fr       */
+/*   Updated: 2026/01/17 19:21:02 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	pf_putc(int c, int *count);
 void	pf_putid(int n, int *count);
 void	pf_putu(unsigned int n, int *count);
 void	pf_puth(unsigned long num, int *count, int upper);
-void	pf_putp(unsigned long long p, int *count);
+void	pf_putp(unsigned long p, int *count);
 #endif
