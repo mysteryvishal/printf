@@ -23,7 +23,6 @@
 *.pdf
 
 # Test Files
-test_*
 
 # docs
 docs/
