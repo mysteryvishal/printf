@@ -6,13 +6,13 @@
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 13:07:04 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/17 19:51:32 by vmistry          ###   ########.fr       */
+/*   Updated: 2026/01/18 09:37:43 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	handle_type(const char type, va_list args, int *count)
+static void	handle_type(const char type, va_list args, int *count)
 {
 	if (type == 'd' || type == 'i')
 		pf_putid(va_arg(args, int), count);
@@ -28,7 +28,6 @@ static int	handle_type(const char type, va_list args, int *count)
 		pf_putp(va_arg(args, unsigned long), count);
 	else
 		pf_putc('%', count);
-	return (0);
 }
 
 int	ft_printf(const char *format, ...)
@@ -45,8 +44,7 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if (handle_type(*format, args, &count))
-				return (count);
+			handle_type(*format, args, &count);
 			format++;
 		}
 		else
