@@ -37,7 +37,7 @@ int	ft_printf(const char *format, ...)
 
 	count = 0;
 	if (format == NULL)
-		return (0);
+		return (-1);
 	va_start(args, format);
 	while (*format)
 	{
