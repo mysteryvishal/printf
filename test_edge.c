@@ -83,6 +83,11 @@ int edge_tests(void)
 	r1 = ft_printf	("20) ft_printf: %c%c%c%c%c\n", 'a', 'b', 'c', 'd', 'e');
 	r2 = printf	("20)    printf: %c%c%c%c%c\n", 'a', 'b', 'c', 'd', 'e');
 	testpf(20, r1, r2, &failures);
-
+	// 21. test ending on %
+	r1 = ft_printf	("21) ft_printf: %c%", 'a');
+	printf("\n");
+	r2 = printf	("21)    printf: %c%", 'a');
+	printf("\n");
+	testpf(21, r1, r2, &failures);
 	return (failures);
 }
