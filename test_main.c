@@ -6,7 +6,7 @@
 /*   By: vmistry <vmistry@student.42london.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 13:37:16 by vmistry           #+#    #+#             */
-/*   Updated: 2026/01/19 10:47:10 by vmistry          ###   ########.fr       */
+/*   Updated: 2026/01/19 16:30:47 by vmistry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ int main(void)
 		fprintf(stderr, "%d test(s) failed\n", failures);
 		return EXIT_FAILURE;
 	}
+	printf("----------------------------\n");
+	printf("All tests passed!\n");
 	return EXIT_SUCCESS;
 }

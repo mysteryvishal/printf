@@ -75,6 +75,14 @@ int edge_tests(void)
 	r1 = ft_printf	("18) ft_printf: small number %d\n", INT_MIN);
 	r2 = printf	("18)    printf: small number %d\n", INT_MIN);
 	testpf(18, r1, r2, &failures);
-	
+	// 19. testing null string with %s specifier
+	r1 = ft_printf	("19) ft_printf: null string %s, %d\n", NULL, NULL);
+	r2 = printf	("19)    printf: null string %s, %d\n", NULL, NULL);
+	testpf(19, r1, r2, &failures);
+	// 20. testing repeat specifiers
+	r1 = ft_printf	("20) ft_printf: %c%c%c%c%c\n", 'a', 'b', 'c', 'd', 'e');
+	r2 = printf	("20)    printf: %c%c%c%c%c\n", 'a', 'b', 'c', 'd', 'e');
+	testpf(20, r1, r2, &failures);
+
 	return (failures);
 }
